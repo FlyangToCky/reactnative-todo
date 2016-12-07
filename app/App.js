@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import {
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
-import CheckBox from 'react-native-checkbox';
+    StyleSheet
+}from 'react-native';
+import { Container, Header,Content, Text,Title, Button, Icon } from 'native-base';
+
+//import Header from './components/Header';
+import Util from  './common/utils';
+//import Card from './components/Card';
 
 export default class App extends Component {
     // 构造
@@ -18,26 +20,32 @@ export default class App extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    TODOS
-                </Text>
-                <CheckBox
-                    label='切换'
-                    checked={this.state.checked}
-                    onChange={(checked) => this.state.checked =!this.state.checked}
-                />
-            </View>
+            <Container>
+                <Header>
+                    <Button transparent>
+                        <Icon name='ios-arrow-back' />
+                    </Button>
+
+                    <Title>Header</Title>
+
+                    <Button transparent>
+                        <Icon name='ios-menu' />
+                    </Button>
+                </Header>
+
+                <Content>
+                    <Text>Your main content goes here</Text>
+                </Content>
+            </Container>
         );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        flex:1,
+        backgroundColor:"#f5f5f5",
+        alignItems:"center"
     }
 });
 
